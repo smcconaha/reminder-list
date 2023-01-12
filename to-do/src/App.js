@@ -25,7 +25,11 @@ function App(props) {
   }
 
   function toggleTaskDeleted(id) {
-    console.log(id);
+    // console.log(id);
+    //set state with new array that copies existing tasks
+    //ignore tasks whose id matches the one passed in
+    const remainingTodos = todos.filter((todo) => id !== todo.id);
+    setTodos(remainingTodos);
   }
 
   //retrieve tasks from index.js, loop thru data with map and return todo component for each while passing props to Todo component
