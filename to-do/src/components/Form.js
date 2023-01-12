@@ -1,8 +1,11 @@
 import React from "react";
 
 function Form(props) {
-  return (
-    <form>
+    function handleSubmit(e) {
+        e.preventDefault();
+    }
+    return (
+    <form onSubmit={handleSubmit}>
         <h2 className="label-wrapper">
             <label htmlFor="new-todo-input" className="label__lg">
             What's on the agenda?
