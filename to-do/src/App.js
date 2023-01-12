@@ -12,23 +12,7 @@ function App(props) {
     <div className="card border-primary mb-3 todoapp stack-large">
       <div className="card-header">Reminders and Todos</div>
       <div className="card-body">
-          <form>
-            <h2 className="label-wrapper">
-              <label htmlFor="new-todo-input" className="label__lg">
-                What's on the agenda?
-              </label>
-            </h2>
-            <input
-              type="text"
-              id="new-todo-input"
-              className="input input__lg"
-              name="text"
-              autoComplete="off"
-            />
-            <button type="submit" className="btn btn-info">
-              Add
-            </button>
-          </form>
+          
           <div className="filters btn-group stack-exception">
             <button type="button" className="btn btn-secondary" aria-pressed="true">
               <span className="visually-hidden">Show </span>
