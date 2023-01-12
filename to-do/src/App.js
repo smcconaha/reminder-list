@@ -4,6 +4,7 @@ import "./../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import Todo from "./components/Todo";
 
 function App(props) {
+  console.log(props.tasks)
   return (
     <div className="card border-primary mb-3 todoapp stack-large">
       <div className="card-header">Reminders and Todos</div>
