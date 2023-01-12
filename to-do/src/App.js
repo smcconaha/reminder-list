@@ -23,6 +23,11 @@ function App(props) {
     });
     setTodos(updatedTodos);
   }
+
+  function toggleTaskDeleted(id) {
+    console.log(id);
+  }
+
   //retrieve tasks from index.js, loop thru data with map and return todo component for each while passing props to Todo component
   const todoList = todos.map((todo) => (
     <Todo 
@@ -31,6 +36,7 @@ function App(props) {
       completed={todo.completed} 
       key={todo.id}
       toggleTaskCompleted={toggleTaskCompleted}
+      toggleTaskDeleted={toggleTaskDeleted}
     />
     ));
   //updating noun based on length of todo array
