@@ -10,6 +10,7 @@ function App(props) {
   const todoList = props.tasks?.map((task) => (
   <Todo id={task.id} title={task.title} completed={task.completed} key={task.id}/>
   ));
+  //addTodo is a callback prop, it expects data from our form to be input...title
   function addTodo(title) {
     alert(title)
 }
