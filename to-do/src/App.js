@@ -1,11 +1,16 @@
-import logo from "./logo.svg";
 import React from "react";
 import "./App.css";
-import Item from "./components/Item";
 
 function App() {
+  const subject = "React";
   return (
-    <Item />
+    <div className="App">
+      <header className="App-header">
+        <p>
+          Hello, {subject}!
+        </p>
+      </header>
+    </div>
   );
 }
 
