@@ -24,10 +24,22 @@ function App(props) {
     setTodos(updatedTodos);
   }
 
+  function editTodo(id, newTitle) {
+    const editedTodoList = todos.map((todo) => {
+      //if todo has same id as the edited task
+      if (id === toggleTaskCompleted.id) {
+        return {...todo, title: newTitle}
+      }
+      return todo;
+    });
+    setTodos(editedTodoList)
+  }
+
   function toggleTaskDeleted(id) {
     // console.log(id);
     //set state with new array that copies existing tasks
     //ignore tasks whose id matches the one passed in
+    //since deleting item, using filter method
     const remainingTodos = todos.filter((todo) => id !== todo.id);
     setTodos(remainingTodos);
   }
@@ -41,6 +53,7 @@ function App(props) {
       key={todo.id}
       toggleTaskCompleted={toggleTaskCompleted}
       toggleTaskDeleted={toggleTaskDeleted}
+      editTodo={editTodo}
     />
     ));
   //updating noun based on length of todo array
