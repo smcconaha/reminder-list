@@ -10,11 +10,15 @@ function App(props) {
   const todoList = props.tasks?.map((task) => (
   <Todo id={task.id} title={task.title} completed={task.completed} key={task.id}/>
   ));
+  function addTodo(title) {
+    alert(title)
+}
   return (
     <div className="card border-primary mb-3 todoapp stack-large">
       <div className="card-header">Reminders and Todos</div>
       <div className="card-body">
-          <Form />
+          {/* pass function to Form component as props */}
+          <Form addTodo={addTodo}/>
           <div className="filters btn-group stack-exception">
             <Filter />
           </div>

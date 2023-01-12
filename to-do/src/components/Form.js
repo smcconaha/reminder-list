@@ -3,6 +3,8 @@ import React from "react";
 function Form(props) {
     function handleSubmit(e) {
         e.preventDefault();
+        //accessing the function defined in App.js passed as props
+        props.addTodo("Say whatup!");
     }
     return (
     <form onSubmit={handleSubmit}>
