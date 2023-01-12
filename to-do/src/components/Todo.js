@@ -1,5 +1,6 @@
 import React from "react";
 
+//props are passes down from parent App.js file but defined in the index.js as DATA
 export default function Todo (props) {
     return (
         <li className="todo stack-small">
