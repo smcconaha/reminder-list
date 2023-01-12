@@ -4,8 +4,10 @@ import "./../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import Todo from "./components/Todo";
 
 function App(props) {
-  //retrieve tasks from index.js, loop thru data with map and return todo component for each
-  const todoList = props.tasks?.map((task) => <Todo />);
+  //retrieve tasks from index.js, loop thru data with map and return todo component for each while passing props to Todo component
+  const todoList = props.tasks?.map((task) => (
+  <Todo id={task.id} title={task.title} completed={task.completed} key={task.id}/>
+  ));
   return (
     <div className="card border-primary mb-3 todoapp stack-large">
       <div className="card-header">Reminders and Todos</div>
