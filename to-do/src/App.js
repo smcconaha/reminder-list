@@ -67,6 +67,17 @@ function App(props) {
       editTodo={editTodo}
     />
     ));
+  //taking mapping filtertitles array to render the three filters as button
+  //setting filter state based on button pushed 
+  const filterList = FILTER_TITLES.map((title) => (
+    <Filter 
+      key={title} 
+      title={title}
+      isPressed={title === filter}
+      setFilter={setFilter}
+    />
+  ));
+
   //updating noun based on length of todo array
   const singularPlural = todoList.length === 1 ? 'task' : 'tasks';
   const todoCount = `You have ${todoList.length} ${singularPlural} left to complete`
@@ -88,7 +99,7 @@ function App(props) {
           {/* pass function to Form component as props */}
           <Form addTodo={addTodo}/>
           <div className="filters btn-group stack-exception">
-            <Filter />
+            {filterList}
           </div>
           <h2 className="card-title" id="list-heading">
             {todoCount}
