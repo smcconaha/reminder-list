@@ -37,7 +37,7 @@ export default function Todo (props) {
               Cancel
               <span className="visually-hidden">renaming {props.title}</span>
             </button>
-            <button type="submit" className="btn btn__primary todo-edit">
+            <button type="submit" className="btn btn-primary todo-edit">
               Save
               <span className="visually-hidden">new name for {props.title}</span>
             </button>

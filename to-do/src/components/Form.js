@@ -3,6 +3,13 @@ import React, { useState } from "react";
 function Form(props) {
     //tested useState by adding text as intial state and physically seeing that in the input line
     const [title, setTitle] = useState('');
+    
+    function handleChange(e) {
+        // console.log("testing")
+        // console.log(e.target.value);
+        //store the updated state of the name as the input value changes
+        setTitle(e.target.value);
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -12,18 +19,11 @@ function Form(props) {
         setTitle("");
     }
 
-    function handleChange(e) {
-        // console.log("testing")
-        // console.log(e.target.value);
-        //store the updated state of the name as the input value changes
-        setTitle(e.target.value);
-    }
-
     return (
     <form onSubmit={handleSubmit}>
         <h2 className="label-wrapper">
             <label htmlFor="new-todo-input" className="label__lg">
-            What's on the agenda?
+                What's on the agenda?
             </label>
         </h2>
         <input

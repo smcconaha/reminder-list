@@ -38,7 +38,7 @@ function App(props) {
   function editTodo(id, newTitle) {
     const editedTodoList = todos.map((todo) => {
       //if todo has same id as the edited task
-      if (id === toggleTaskCompleted.id) {
+      if (id === todo.id) {
         return {...todo, title: newTitle}
       }
       return todo;
