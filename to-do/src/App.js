@@ -6,7 +6,7 @@ import Todo from "./components/Todo";
 import Form from "./components/Form";
 import Filter from "./components/Filter";
 
-const FILTER = {
+const FILTER_MAP = {
   All: () => true,
   Active: (todo) => !todo.completed,
   Completed: (todo) => todo.completed
@@ -14,7 +14,7 @@ const FILTER = {
 
 //Object.keys() returns an array of given object's own enumerable string-keyed property names
 //Returns All, Active, Completed
-const FILTER_TITLES = Object.keys(FILTER);
+const FILTER_TITLES = Object.keys(FILTER_MAP);
 
 function App(props) {
   //passing props.tasks in to preserve initial state
@@ -56,17 +56,20 @@ function App(props) {
   }
 
   //retrieve tasks from index.js, loop thru data with map and return todo component for each while passing props to Todo component
-  const todoList = todos.map((todo) => (
-    <Todo 
-      id={todo.id} 
-      title={todo.title} 
-      completed={todo.completed} 
-      key={todo.id}
-      toggleTaskCompleted={toggleTaskCompleted}
-      toggleTaskDeleted={toggleTaskDeleted}
-      editTodo={editTodo}
-    />
-    ));
+  const todoList = todos
+    .filter(FILTER_MAP[filter])
+    .map((todo) => (
+      <Todo 
+        id={todo.id} 
+        title={todo.title} 
+        completed={todo.completed} 
+        key={todo.id}
+        toggleTaskCompleted={toggleTaskCompleted}
+        toggleTaskDeleted={toggleTaskDeleted}
+        editTodo={editTodo}
+      />
+  ));
+
   //taking mapping filtertitles array to render the three filters as button
   //setting filter state based on button pushed 
   const filterList = FILTER_TITLES.map((title) => (
