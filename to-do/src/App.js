@@ -6,10 +6,21 @@ import Todo from "./components/Todo";
 import Form from "./components/Form";
 import Filter from "./components/Filter";
 
+const FILTER = {
+  All: () => true,
+  Active: (todo) => !todo.completed,
+  Completed: (todo) => todo.completed
+}
+
+//Object.keys() returns an array of given object's own enumerable string-keyed property names
+//Returns All, Active, Completed
+const FILTER_TITLES = Object.keys(FILTER);
+
 function App(props) {
   //passing props.tasks in to preserve initial state
   const [todos, setTodos] = useState(props.todos);
-  
+  //adding hook to set the filter, showing all for initial state
+  const [filter, setFilter] = useState('All');
   function toggleTaskCompleted(id) {
     //console.log(todos[0]) //verifying checkbox not updating to false
     const updatedTodos = todos.map((todo) => {
