@@ -12,7 +12,7 @@ export default function Todo (props) {
     //Function handles edit form submit
     function handleSubmit(e) {
         e.preventDefault();
-        props.editTodos(props.id, newTitle);
+        props.editTodo(props.id, newTitle);
         setNewTitle("");
         setEditing(false);
       }
@@ -67,7 +67,7 @@ export default function Todo (props) {
               <button
                 type="button"
                 className="btn btn__danger"
-                onClick={() => props.deleteTask(props.id)}
+                onClick={() => props.toggleTaskDeleted(props.id)}
               >
                 Delete <span className="visually-hidden">{props.title}</span>
               </button>
