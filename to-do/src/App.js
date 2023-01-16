@@ -83,7 +83,7 @@ function App(props) {
 
   //updating noun based on length of todo array
   const singularPlural = todoList.length === 1 ? 'task' : 'tasks';
-  const todoCount = `You have ${todoList.length} ${singularPlural} left to complete`
+  const todoCount = `Number of ${singularPlural}:  ${todoList.length} `
   //addTodo is a callback prop, it expects data from our form to be input...title
   function addTodo(title) {
     // alert(title)
@@ -96,24 +96,30 @@ function App(props) {
     setTodos([...todos, newTodo]);
 }
   return (
-    <div className="card border-primary mb-3 todoapp stack-large">
-      <div className="card-header">Reminders and Todos</div>
-      <div className="card-body">
-          {/* pass function to Form component as props */}
-          <Form addTodo={addTodo}/>
-          <div className="filters btn-group stack-exception">
-            {filterList}
+    <div className="container-fluid">
+      <div className="row justify-content-center">
+        <div className="col-8 text-center">
+          <div className="card border-primary mb-3 todoapp bg-transparent border-opacity-10">
+            <div className="card-header fw-bold">Reminders and Todos</div>
+            <div className="card-body">
+                {/* pass function to Form component as props */}
+                <Form addTodo={addTodo}/>
+                <div className="filters btn-group mt-3">
+                  {filterList}
+                </div>
+                <h2 className="card-title mt-3" id="list-heading">
+                  {todoCount}
+                </h2>
+                <ul
+                  role="list" //helps assistive tech explain the element a tag represents
+                  className="todo-list list-inline"
+                  aria-labelledby="list-heading"
+                >
+                  {todoList}
+                </ul>
+            </div>
           </div>
-          <h2 className="card-title" id="list-heading">
-            {todoCount}
-          </h2>
-          <ul
-            role="list" //helps assistive tech explain the element a tag represents
-            className="todo-list stack-large stack-exception"
-            aria-labelledby="list-heading"
-          >
-            {todoList}
-          </ul>
+        </div>
       </div>
     </div>
   );

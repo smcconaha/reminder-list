@@ -18,9 +18,9 @@ export default function Todo (props) {
       }
     //*****EDITING TEMPLATE
     const editingTemplate = (
-        <form className="stack-small" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label className="todo-label" htmlFor={props.id}>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group mt-3">
+            <label className="todo-label pe-2" htmlFor={props.id}>
               New name for {props.title}
             </label>
             <input 
@@ -33,11 +33,11 @@ export default function Todo (props) {
           </div>
           <div className="btn-group">
             {/* when cancel button pressed setEditing returns false */}
-            <button type="button" className="btn todo-cancel" onClick={() => setEditing(false)}>
+            <button type="button" className="btn btn-dark" onClick={() => setEditing(false)}>
               Cancel
               <span className="visually-hidden">renaming {props.title}</span>
             </button>
-            <button type="submit" className="btn btn-primary todo-edit">
+            <button type="submit" className="btn btn-dark">
               Save
               <span className="visually-hidden">new name for {props.title}</span>
             </button>
@@ -47,35 +47,43 @@ export default function Todo (props) {
       //*****EDITING TEMP END
       //*****VIEW TEMPLATE
       const viewTemplate = (
-        <div className="stack-small">
-          <div className="c-cb">
+        <div>
+          <div>
               <input
                 id={props.id}
                 type="checkbox"
+                className="me-2 checkbox"
                 defaultChecked={props.completed}
                 onChange={() => props.toggleTaskCompleted(props.id)}
               />
-              <label className="todo-label" htmlFor={props.id}>
+              <label className="todo-label fw-bold pe-2" htmlFor={props.id}>
                 {props.title}
               </label>
-            </div>
             <div className="btn-group">
               {/* when edit button pressed setEditing returns true */}
-              <button type="button" className="btn" onClick={() => setEditing(true)}>
-                Edit <span className="visually-hidden">{props.title}</span>
+              <button 
+                type="button" 
+                className="btn btn-outline-dark" 
+                onClick={() => setEditing(true)}>
+                Edit 
+                <span className="visually-hidden">{props.title}</span>
               </button>
               <button
                 type="button"
-                className="btn btn__danger"
+                className="btn btn-outline-dark"
                 onClick={() => props.toggleTaskDeleted(props.id)}
-              >
+                >
                 Delete <span className="visually-hidden">{props.title}</span>
               </button>
-            </div>
+                </div>
+          </div>
         </div>
         //*****VIEW TEMP END
       );      
     return (
-        <li className="todo">{isEditing ? editingTemplate : viewTemplate}</li>
+        <>
+          <li className="todo list-inline-item">{isEditing ? editingTemplate : viewTemplate}</li>
+          <br></br>
+        </>
     );
 }

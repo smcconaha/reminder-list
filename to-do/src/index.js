@@ -7,7 +7,7 @@ import App from './App';
 //Naming convention stating that data will never change
 const DATA = [
   { id: "todo-0", title: "Eat breakfast", completed: true },
-  { id: "todo-1", title: "Walk the cats", completed: false },
+  { id: "todo-1", title: "Make coffee", completed: false },
   { id: "todo-2", title: "Do 100 pushups", completed: false }
 ];
 const root = ReactDOM.createRoot(document.getElementById('root'));
