@@ -4,6 +4,11 @@
   font-family: 'Alice', serif;
 }
 
+.todoapp {
+  border-radius: .75rem !important; 
+  background-color: red !important;
+}
+
 .card-title, .label {
   font-size: 40px;
 }
@@ -17,16 +22,12 @@
   height: 20px;
 }
 
-.todoapp, .card-body {
-  border-color: rgb(215, 174, 124);
-}
-
 .card-header{
   font-size: 60px;
 }
 
 .container-fluid {
-  background: url("./images/background_paper.jpg") no-repeat;
+  /* background: url("./images/background_paper.jpg") no-repeat; */
   background-size: cover;
   background-position: center;
   height: 100vh;

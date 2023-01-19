@@ -96,32 +96,34 @@ function App(props) {
     setTodos([...todos, newTodo]);
 }
   return (
-    <div className="container-fluid">
-      <div className="row justify-content-center">
-        <div className="col-8 text-center">
-          <div className="card border-primary mb-3 todoapp bg-transparent border-opacity-10">
-            <div className="card-header fw-bold">Reminders and Todos</div>
-            <div className="card-body">
-                {/* pass function to Form component as props */}
-                <Form addTodo={addTodo}/>
-                <div className="filters btn-group mt-3">
-                  {filterList}
-                </div>
-                <h2 className="card-title mt-3" id="list-heading">
-                  {todoCount}
-                </h2>
-                <ul
-                  role="list" //helps assistive tech explain the element a tag represents
-                  className="todo-list list-inline"
-                  aria-labelledby="list-heading"
-                >
-                  {todoList}
-                </ul>
+    <section className="vh-100">
+      <div className="container-fluid py-5 h-100">
+        <div className="row d-flex justify-content-center align-items-center h-100">
+          <div className="col-8 text-center">
+            <div className="card border-primary mb-3 todoapp">
+              <div className="card-header fw-bold">Reminders and Todos</div>
+              <div className="card-body py-4 px-4 px-md-5">
+                  {/* pass function to Form component as props */}
+                  <Form addTodo={addTodo}/>
+                  <div className="filters btn-group mt-3">
+                    {filterList}
+                  </div>
+                  <h2 className="card-title mt-3" id="list-heading">
+                    {todoCount}
+                  </h2>
+                  <ul
+                    role="list" //helps assistive tech explain the element a tag represents
+                    className="todo-list list-inline"
+                    aria-labelledby="list-heading"
+                  >
+                    {todoList}
+                  </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

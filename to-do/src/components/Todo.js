@@ -47,42 +47,44 @@ export default function Todo (props) {
       //*****EDITING TEMP END
       //*****VIEW TEMPLATE
       const viewTemplate = (
-        <div>
-          <div>
-              <input
-                id={props.id}
-                type="checkbox"
-                className="me-2 checkbox"
-                defaultChecked={props.completed}
-                onChange={() => props.toggleTaskCompleted(props.id)}
-              />
-              <label className="todo-label fw-bold pe-2" htmlFor={props.id}>
-                {props.title}
-              </label>
-            <div className="btn-group">
-              {/* when edit button pressed setEditing returns true */}
-              <button 
-                type="button" 
-                className="btn btn-outline-dark" 
-                onClick={() => setEditing(true)}>
-                Edit 
-                <span className="visually-hidden">{props.title}</span>
-              </button>
-              <button
-                type="button"
-                className="btn btn-outline-dark"
-                onClick={() => props.toggleTaskDeleted(props.id)}
-                >
-                Delete <span className="visually-hidden">{props.title}</span>
-              </button>
+          <>
+            <div className="col-8 text-start">
+                <input
+                  id={props.id}
+                  type="checkbox"
+                  className="me-2 checkbox"
+                  defaultChecked={props.completed}
+                  onChange={() => props.toggleTaskCompleted(props.id)}
+                />
+                <label className="todo-label fw-bold pe-2" htmlFor={props.id}>
+                  {props.title}
+                </label>
+            </div>
+            <div className="col-4 text-end">
+              <div className="btn-group">
+                {/* when edit button pressed setEditing returns true */}
+                <button 
+                  type="button" 
+                  className="btn btn-outline-dark" 
+                  onClick={() => setEditing(true)}>
+                  Edit 
+                  <span className="visually-hidden">{props.title}</span>
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-outline-dark"
+                  onClick={() => props.toggleTaskDeleted(props.id)}
+                  >
+                  Delete <span className="visually-hidden">{props.title}</span>
+                </button>
                 </div>
-          </div>
-        </div>
+            </div>
+          </>
         //*****VIEW TEMP END
       );      
     return (
         <>
-          <li className="todo list-inline-item">{isEditing ? editingTemplate : viewTemplate}</li>
+          <li className="todo list-inline-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">{isEditing ? editingTemplate : viewTemplate}</li>
           <br></br>
         </>
     );
