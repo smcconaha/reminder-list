@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/reminder-list/static/css/main.be5f38d8.css",
+    "main.js": "/reminder-list/static/js/main.7c206523.js",
+    "static/media/background_field.jpg": "/reminder-list/static/media/background_field.79bf0baa46af433f08b4.jpg",
+    "index.html": "/reminder-list/index.html",
+    "main.be5f38d8.css.map": "/reminder-list/static/css/main.be5f38d8.css.map",
+    "main.7c206523.js.map": "/reminder-list/static/js/main.7c206523.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be5f38d8.css",
+    "static/js/main.7c206523.js"
+  ]
+}
