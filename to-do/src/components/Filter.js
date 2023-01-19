@@ -5,7 +5,7 @@ function Filter(props) {
     return (
     <button 
         type="button" 
-        className="btn btn-outline-dark text-bold" 
+        className="btn btn-secondary m-1" 
         aria-pressed={props.isPressed}
         onClick={() => props.setFilter(props.title)}
     >

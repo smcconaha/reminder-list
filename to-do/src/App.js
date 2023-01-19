@@ -96,17 +96,19 @@ function App(props) {
     setTodos([...todos, newTodo]);
 }
   return (
-    <section className="vh-100">
+    <div className="card-wrapper">
       <div className="container-fluid py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
-          <div className="col-8 text-center">
+          <div className="col-lg-7 col-md-9 col-sm-10 text-center">
             <div className="card border-primary mb-3 todoapp">
               <div className="card-header fw-bold">Reminders and Todos</div>
               <div className="card-body py-4 px-4 px-md-5">
                   {/* pass function to Form component as props */}
                   <Form addTodo={addTodo}/>
-                  <div className="filters btn-group mt-3">
+                  <div className="row filters btn-group mt-3">
+                    <div col>
                     {filterList}
+                    </div>
                   </div>
                   <h2 className="card-title mt-3" id="list-heading">
                     {todoCount}
@@ -123,7 +125,7 @@ function App(props) {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

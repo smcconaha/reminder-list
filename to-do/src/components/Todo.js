@@ -21,7 +21,7 @@ export default function Todo (props) {
         <form onSubmit={handleSubmit}>
           <div className="form-group mt-3">
             <label className="todo-label pe-2" htmlFor={props.id}>
-              New name for {props.title}
+              Rename {props.title}
             </label>
             <input 
                 id={props.id} 
@@ -31,13 +31,13 @@ export default function Todo (props) {
                 onChange={handleChange} 
             />
           </div>
-          <div className="btn-group">
+          <div className="btn-group pt-2">
             {/* when cancel button pressed setEditing returns false */}
-            <button type="button" className="btn btn-dark" onClick={() => setEditing(false)}>
+            <button type="button" className="btn btn-secondary m-1 rounded-pill" onClick={() => setEditing(false)}>
               Cancel
               <span className="visually-hidden">renaming {props.title}</span>
             </button>
-            <button type="submit" className="btn btn-dark">
+            <button type="submit" className="btn btn-primary m-1 rounded-pill">
               Save
               <span className="visually-hidden">new name for {props.title}</span>
             </button>
@@ -48,7 +48,7 @@ export default function Todo (props) {
       //*****VIEW TEMPLATE
       const viewTemplate = (
           <>
-            <div className="col-8 text-start">
+            <div className="col-7 text-start">
                 <input
                   id={props.id}
                   type="checkbox"
@@ -60,19 +60,19 @@ export default function Todo (props) {
                   {props.title}
                 </label>
             </div>
-            <div className="col-4 text-end">
+            <div className="col-5 text-end">
               <div className="btn-group">
                 {/* when edit button pressed setEditing returns true */}
                 <button 
                   type="button" 
-                  className="btn btn-outline-dark" 
+                  className="btn btn-success m-1 rounded-pill edit-btn" 
                   onClick={() => setEditing(true)}>
                   Edit 
                   <span className="visually-hidden">{props.title}</span>
                 </button>
                 <button
                   type="button"
-                  className="btn btn-outline-dark"
+                  className="btn btn-danger m-1 rounded-pill"
                   onClick={() => props.toggleTaskDeleted(props.id)}
                   >
                   Delete <span className="visually-hidden">{props.title}</span>

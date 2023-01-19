@@ -1,36 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Alice&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Sacramento&display=swap');    
 
 .label, .card-header, .card-title, .todo-label {
   font-family: 'Alice', serif;
 }
 
+.input {
+  height: 2.3rem;
+}
+
+.edit-btn {
+  min-width: 4.5rem;
+}
+
+.card-wrapper {
+  position: relative;
+  background: url("./images/background_paper.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.card-body {
+  padding: .75rem;
+}
+
 .todoapp {
   border-radius: .75rem !important; 
-  background-color: red !important;
+  background-color: rgb(239, 239, 239) !important;
+}
+
+.card-header{
+  font-size: 3vw;
 }
 
 .card-title, .label {
-  font-size: 40px;
+  font-size: 2vw;
 }
 
 .todo-label {
-  font-size: 20px;
+  font-size: 1.5vw;
 }
 
 .checkbox {
   width: 20px; 
   height: 20px;
-}
-
-.card-header{
-  font-size: 60px;
-}
-
-.container-fluid {
-  /* background: url("./images/background_paper.jpg") no-repeat; */
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
 }
 
 .visually-hidden {

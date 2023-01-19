@@ -29,13 +29,13 @@ function Form(props) {
         <input
             type="text"
             id="new-todo-input"
-            className="input input__lg"
+            className="input pb-1"
             name="text"
             autoComplete="off"
             value={title}
             onChange={handleChange}
         />
-        <button type="submit" className="btn btn-outline-dark">
+        <button type="submit" className="btn btn-info">
             Add
         </button>
     </form>
